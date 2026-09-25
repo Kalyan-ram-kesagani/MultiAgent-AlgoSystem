@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    
+    /* Default dark theme tokens */
+    --app-bg: #080d16;
+    --surface-bg: #0d131f;
+    --surface-card: rgba(15, 23, 42, 0.7);
+    --surface-card-hover: rgba(30, 41, 59, 0.6);
+    --surface-input: #090e17;
+    --surface-border: #1e293b;
+    --surface-border-subtle: rgba(30, 41, 59, 0.5);
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    --badge-bg: rgba(30, 41, 59, 0.7);
+    --badge-border: #334155;
+    
+    --chart-grid: #1e293b;
+    --chart-balance: #64748b;
+
+    --color-profit: #10b981;
+    --color-loss: #f43f5e;
+    --color-border: #1e293b;
+    --color-muted-foreground: #64748b;
+    --color-popover: #0f172a;
+    --color-popover-foreground: #f8fafc;
+  }
+
+  html.light {
+    --app-bg: #f8fafc;
+    --surface-bg: #ffffff;
+    --surface-card: #ffffff;
+    --surface-card-hover: #f1f5f9;
+    --surface-input: #f8fafc;
+    --surface-border: #e2e8f0;
+    --surface-border-subtle: #edf2f7;
+    
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    
+    --badge-bg: #f1f5f9;
+    --badge-border: #cbd5e1;
+    
+    --chart-grid: #e2e8f0;
+    --chart-balance: #94a3b8;
+
+    --color-profit: #059669;
+    --color-loss: #e11d48;
+    --color-border: #e2e8f0;
+    --color-muted-foreground: #64748b;
+    --color-popover: #ffffff;
+    --color-popover-foreground: #0f172a;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--app-bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Theme helper utility classes */
+.theme-bg-app {
+  background-color: var(--app-bg);
+}
+.theme-bg-surface {
+  background-color: var(--surface-bg);
+}
+.theme-card {
+  background-color: var(--surface-card);
+  border-color: var(--surface-border);
+}
+.theme-card-hover:hover {
+  background-color: var(--surface-card-hover);
+  border-color: var(--surface-border);
+}
+.theme-border {
+  border-color: var(--surface-border);
+}
+.theme-border-subtle {
+  border-color: var(--surface-border-subtle);
+}
+.theme-text-primary {
+  color: var(--text-primary);
+}
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+.theme-text-muted {
+  color: var(--text-muted);
+}
+.theme-input {
+  background-color: var(--surface-input);
+  border-color: var(--surface-border);
+  color: var(--text-primary);
+}
+

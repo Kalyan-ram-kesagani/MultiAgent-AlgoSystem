@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Dark Theme (default) ─── */
+:root {
+  --surface: #0c0e14;
+  --surface-raised: #13151d;
+  --surface-overlay: #1a1d28;
+  --border: #23272f;
+  --border-subtle: #1c1f27;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0ab;
+  --text-muted: #5f6672;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --profit: #22c55e;
+  --loss: #ef4444;
+  --warning: #f59e0b;
+  --scrollbar-bg: #13151d;
+  --scrollbar-thumb: #23272f;
+}
+
+/* ─── Light Theme ─── */
+.light {
+  --surface: #f8f9fb;
+  --surface-raised: #ffffff;
+  --surface-overlay: #f1f3f5;
+  --border: #e2e5ea;
+  --border-subtle: #ebedf0;
+  --text-primary: #111318;
+  --text-secondary: #5f6672;
+  --text-muted: #9aa0ab;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --profit: #16a34a;
+  --loss: #dc2626;
+  --warning: #d97706;
+  --scrollbar-bg: #f1f3f5;
+  --scrollbar-thumb: #d1d5db;
+}
+
+/* ─── Base ─── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--surface);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ─── Utilities ─── */
+.text-profit {
+  color: var(--profit);
+}
+
+.text-loss {
+  color: var(--loss);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.bg-profit-subtle {
+  background-color: rgba(34, 197, 94, 0.08);
+}
+
+.bg-loss-subtle {
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.bg-warning-subtle {
+  background-color: rgba(245, 158, 11, 0.08);
+}
+
+/* ─── Card ─── */
+.card {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--border);
+}
+
+/* ─── Status Indicators ─── */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot--online {
+  background-color: var(--profit);
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+}
+
+.status-dot--offline {
+  background-color: var(--loss);
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+}
+
+.status-dot--warning {
+  background-color: var(--warning);
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.4);
+}
+
+/* ─── Skeleton Loader ─── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-overlay) 25%,
+    var(--border) 50%,
+    var(--surface-overlay) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ─── Page Transitions ─── */
+.page-enter {
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Recharts Overrides ─── */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border-subtle);
+}
+
+.recharts-text {
+  fill: var(--text-muted);
+  font-size: 11px;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}

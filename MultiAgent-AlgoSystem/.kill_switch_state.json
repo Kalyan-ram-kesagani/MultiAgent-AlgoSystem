@@ -1,6 +1,6 @@
 {
-  "kill_switch_active": false,
-  "reason": null,
-  "operator": "TEST_FIXTURE",
-  "updated_at": "2026-09-24T10:45:22.292156+00:00"
+  "kill_switch_active": true,
+  "reason": "Engaged by MT5_COLLECTOR: Auto-tripped by MT5Collector: MT5 terminal connection lost",
+  "operator": "MT5_COLLECTOR",
+  "updated_at": "2026-09-25T09:37:28.281643+00:00"
 }
